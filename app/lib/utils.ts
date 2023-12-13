@@ -39,6 +39,7 @@ export const generatePagination = (currentPage: number, totalPages: number) => {
   // If the total number of pages is 7 or less,
   // display all pages without any ellipsis.
   if (totalPages <= 7) {
+    // 숫자 시퀀스 생성하기
     return Array.from({ length: totalPages }, (_, i) => i + 1);
   }
 
