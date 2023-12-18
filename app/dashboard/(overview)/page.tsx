@@ -1,3 +1,4 @@
+import { Metadata } from 'next';
 import CardWrapper from '@/app/ui/dashboard/cards';
 import { Card } from '@/app/ui/dashboard/cards';
 import RevenueChart from '@/app/ui/dashboard/revenue-chart';
@@ -5,18 +6,21 @@ import LatestInvoices from '@/app/ui/dashboard/latest-invoices';
 import { ar_one_sans, tektur } from '@/app/ui/fonts';
 import { fetchLatestInvoices, fetchCardData } from '@/app/lib/data';
 import { Suspense } from 'react';
-import { 
+import {
   RevenueChartSkeleton,
   LatestInvoicesSkeleton,
   CardsSkeleton,
 } from '@/app/ui/skeletons';
 
+export const metadata: Metadata = {
+  title: 'Dashboard',
+}
 
 export default async function Page() {
   // Move data fetches down to the components that need it
   // const revenue = await fetchRevenue();
-	// const latestInvoices = await fetchLatestInvoices();
-	// const {
+  // const latestInvoices = await fetchLatestInvoices();
+  // const {
   //   numberOfInvoices,
   //   numberOfCustomers,
   //   totalPaidInvoices,
